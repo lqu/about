@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #response {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Dynamic Personal Website</h1>
+    <label for="userInput">Enter your text:</label>
+    <input type="text" id="userInput">
+    <button onclick="getResponse()">Submit</button>
+    <div id="response"></div>
+
+    <script>
+        const randomReplies = [
+            "Hello there!",
+            "How can I help you?",
+            "Nice to meet you!",
+            "Have a great day!",
+            "What's up?"
+        ];
+
+        function getResponse() {
+            const userInput = document.getElementById('userInput').value;
+            const randomReply = randomReplies[Math.floor(Math.random() * randomReplies.length)];
+            document.getElementById('response').innerText = `You said: ${userInput}. Reply: ${randomReply}`;
+        }
+    </script>
+</body>
+</html>
